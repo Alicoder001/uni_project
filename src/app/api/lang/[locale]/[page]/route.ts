@@ -1,29 +1,28 @@
-import { NextResponse } from "next/server";
-import { NextRequest } from "next/server"; // NextApiRequest o'rniga to'g'ri import
+import { NextRequest, NextResponse } from "next/server";
 import { getTranslations } from "../../../../../lib/i118n";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { locale: string; page: string } }
-) {
+const GET = async (req: NextRequest) => {
   try {
-    const { locale, page } = params;
+    const pathParts = req.nextUrl.pathname.split("/");
+    const locale = pathParts[pathParts.length - 2];
+    const page = pathParts[pathParts.length - 1];
 
     if (!locale || !page) {
       return NextResponse.json(
-        { error: "Missing required parameters: locale or page." },
+        { error: "Locale yoki page parametri topilmadi" },
         { status: 400 }
       );
     }
 
     const translations = await getTranslations(locale, page);
-
-    return NextResponse.json(translations, { status: 200 });
+    return NextResponse.json(translations);
   } catch (error) {
-    console.error("Error fetching translations:", error);
+    console.error("Tarjimalarni olishda xatolik:", error);
     return NextResponse.json(
-      { error: "Failed to fetch translations." },
+      { error: "Tarjimalarni olishda xatolik yuz berdi" },
       { status: 500 }
     );
   }
-}
+};
+
+export { GET };

@@ -1,9 +1,10 @@
-import fs from "fs/promises"; // `fs/promises` modulidan foydalanamiz
+import fs from "fs/promises";
 import path from "path";
 
 const getData = async (filename: string): Promise<any> => {
   try {
     const filePath = path.join(process.cwd(), "db", "data", `${filename}.json`);
+    await fs.access(filePath); // Fayl mavjudligini tekshiradi
     const fileContents = await fs.readFile(filePath, "utf-8");
     return JSON.parse(fileContents);
   } catch (error) {
