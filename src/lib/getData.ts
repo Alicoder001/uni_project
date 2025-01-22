@@ -1,10 +1,10 @@
-import fs from "fs";
+import fs from "fs/promises"; // `fs/promises` modulidan foydalanamiz
 import path from "path";
 
-const getData = (filename: string) => {
+const getData = async (filename: string): Promise<any> => {
   try {
     const filePath = path.join(process.cwd(), "db", "data", `${filename}.json`);
-    const fileContents = fs.readFileSync(filePath, "utf-8");
+    const fileContents = await fs.readFile(filePath, "utf-8");
     return JSON.parse(fileContents);
   } catch (error) {
     console.error(`Error reading JSON file: ${filename}.json`, error);

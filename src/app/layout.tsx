@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Azeret_Mono as Geist_Mono,
-  Inter,
-  Roboto,
-} from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import BodyAttributes from "../components/body-attributes";
+
 import RootProvider from "./providers/root-provider";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });

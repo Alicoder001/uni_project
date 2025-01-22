@@ -23,7 +23,6 @@ const About = () => {
     locale,
     page
   );
-  console.log(translations);
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
       {/* About Section */}

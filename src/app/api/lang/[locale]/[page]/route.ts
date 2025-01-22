@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
+import { NextRequest } from "next/server"; // NextApiRequest o'rniga to'g'ri import
 import { getTranslations } from "../../../../../lib/i118n";
-import { NextApiRequest } from "next";
 
 export async function GET(
-  request: NextApiRequest,
+  request: NextRequest,
   { params }: { params: { locale: string; page: string } }
 ) {
   try {
     const { locale, page } = params;
-    console.log(page);
+
     if (!locale || !page) {
       return NextResponse.json(
         { error: "Missing required parameters: locale or page." },
@@ -16,7 +16,7 @@ export async function GET(
       );
     }
 
-    const translations = getTranslations(locale, page);
+    const translations = await getTranslations(locale, page);
 
     return NextResponse.json(translations, { status: 200 });
   } catch (error) {

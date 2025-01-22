@@ -1,18 +1,26 @@
-import type { NextConfig } from "next";
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+import getData from "./src/lib/getData";
 
-const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  webpack: (config, { isServer }) => {
-    // Fixes npm packages that depend on `fs` module
-    if (!isServer) {
-      config.node = {
-        fs: "empty",
-      };
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { filename: string } }
+) {
+  try {
+    const { filename } = params;
+    if (!filename) {
+      return NextResponse.json(
+        { error: "Missing required parameters: data." },
+        { status: 400 }
+      );
     }
-
-    return config;
-  },
-};
-
-export default nextConfig;
+    const data = await getData(filename);
+    return NextResponse.json(data, { status: 200 });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch data." },
+      { status: 500 }
+    );
+  }
+}

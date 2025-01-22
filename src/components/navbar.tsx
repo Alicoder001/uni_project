@@ -168,7 +168,7 @@ function LanguageSelector({
   const [isOpen, setIsOpen] = useState(false);
 
   let params = window.location.pathname.split("/");
-  console.log(params);
+
   const sortedLanguages = [
     selectedLanguage,
     ...langs?.filter((lang) => lang.code !== selectedLanguage.code),
@@ -198,7 +198,6 @@ function LanguageSelector({
                 setLang(lang.code);
                 localStorage.setItem("lang", lang.code);
                 setSelectedLanguage(lang);
-                console.log(params.join("/"));
               }}
             >
               {lang.label[locale]}

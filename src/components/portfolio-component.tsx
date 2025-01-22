@@ -103,8 +103,6 @@ const items: PortfolioItem[] = [
 const filters = ["all", "branding", "mobile", "crm", "website"];
 
 export default function PortfolioComponent() {
-  // const data = await readJsonFile("portfolio");
-  // console.log(data);
   const [activeFilter, setActiveFilter] = useState("all");
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
