@@ -1,11 +1,8 @@
 export const getFetchData = async (filename: string) => {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/data/${filename}`,
-      {
-        method: "GET",
-      }
-    );
+    const response = await fetch(`api/data/${filename}`, {
+      method: "GET",
+    });
 
     if (!response.ok) {
       throw new Error(`Failed to fetch translations: ${response.statusText}`);
