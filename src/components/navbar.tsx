@@ -68,10 +68,12 @@ export default function AnimatedNavbar() {
           </div>
           <Link href="/">
             <Image
-              className="cursor-pointer"
+              className={`cursor-pointer  ${
+                isScrolled ? "w-[70px] h-[70px]" : "w-[80px] h-[80px]"
+              }`}
               src="/assets/icons/logo.png"
-              width={isScrolled ? 60 : 70}
-              height={isScrolled ? 42 : 52}
+              width={70}
+              height={70}
               alt="Logo"
               priority
             />

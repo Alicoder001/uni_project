@@ -3,6 +3,7 @@ import About from "../../components/about";
 import Adventage from "../../components/adventage";
 import Hero from "../../components/hero";
 import PortfolioComponent from "../../components/portfolio-component";
+import Preloader from "../../components/Preloader";
 import ServiceComponent from "../../components/service-component";
 import { useGetData } from "../../hooks/useGetData";
 import { useTranslations } from "../../hooks/useTranslations";
@@ -17,9 +18,10 @@ export default function Page() {
 
   const page = "home";
   const { translations } = useTranslations(locale, page);
-  const { data } = useGetData("service");
+  const { data, loading } = useGetData("service");
   return (
     <div className="h-full">
+      {loading && <Preloader />}
       <Hero translations={translations} />
       <About translations={translations} />
       <section

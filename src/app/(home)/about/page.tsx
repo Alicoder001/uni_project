@@ -10,6 +10,7 @@ import { useTranslations } from "../../../hooks/useTranslations";
 import { ILocale } from "../../../types";
 import { useGetData } from "../../../hooks/useGetData";
 import { IService } from "../../../types/service";
+import Preloader from "../../../components/Preloader";
 
 const About = () => {
   const { ready, lang } = useLangStorage((state: any) => state);
@@ -25,6 +26,7 @@ const About = () => {
   );
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
+      {/* {loading && <Preloader />} */}
       {/* About Section */}
       {Object.keys(translations).length > 0 && ready && (
         <>
@@ -54,7 +56,7 @@ const About = () => {
                   alt="logo"
                   className="w-40 md:w-52"
                 />
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center md:text-left text-white">
+                <h1 className="text-4xl md:text-4xl lg:text-[45px] font-bold text-center md:text-left text-white pt-5">
                   UPT Project
                 </h1>
               </motion.div>
