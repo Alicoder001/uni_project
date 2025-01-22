@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #252527;
+  --foreground: #171717;
+  --hero-gradient: linear-gradient(
+    180deg,
+    rgba(30, 30, 32, 0) 0%,
+    rgba(30, 30, 32, 0.53) 29.38%,
+    #1e1e20 100%
+  );
+  --item-gradient: linear-gradient(
+    154deg,
+    #141415 0%,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(20, 20, 21, 0.2) 94.29%
+  );
+  --bg-primary: linear-gradient(to bottom, #1a1a2e, #16213e);
+  --bg-secondary: rgba(34, 49, 63, 0.3);
+  --item-bg: rgba(52, 73, 94, 0.2);
+  --primary-color: #1e3799;
+  --secondary-color: #4a69bd;
+  --text-color: #6a89cc;
+  --hover-bg: var(--text-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --aboutbg: linear-gradient(135deg, #0f172a, #1e3a8a, #131a80);
+  }
+}
+@layer utilities {
+  .hero-bg {
+    /* background-image: url("/assets/images/hero.png"); */
+  }
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+
+body {
+  color: white;
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  @apply font-inter;
+}
+.container {
+  @apply w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-10;
+}
+.container-mini {
+  @apply w-full max-w-6xl mx-auto px-5 sm:px-6 lg:px-10;
+}
+h2,
+h3,
+h5 {
+  @apply font-extrabold w-full text-white;
+}
+h2 {
+  @apply text-2xl md:text-3xl lg:text-[45px];
+}
+h3 {
+  @apply text-xl md:text-2xl lg:text-3xl;
+}
+h5 {
+  @apply text-xl md:text-lg lg:text-[21.93px];
+}
+.subtitle {
+  @apply text-xs md:text-sm lg:text-base font-medium leading-5 tracking-[0.54px] uppercase text-white/60;
+}
+p {
+  @apply text-xs md:text-sm  font-medium leading-5 tracking-[0.54px] text-white/60;
+}

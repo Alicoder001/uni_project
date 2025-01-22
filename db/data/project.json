@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "icon": "/assets/icons/safenetpay.svg",
+      "description": {
+        "uz": "Biz safenetpay.com xalqaro veb-saytini ishlab chiqdik, unda xavfsizlik talablari va zamonaviy dizayn talablariga mos animatsiyalar qo'llanilgan. Safenetpay to'lov tizimlarini soddalashtiruvchi xalqaro kompaniya.",
+        "en": "We developed the international-level safenetpay.com website using animations that comply with cybersecurity standards and modern design practices. Safenetpay specializes in simplifying payment systems.",
+        "ru": "Мы разработали сайт safenetpay.com международного уровня с использованием анимации, соответствующей стандартам кибербезопасности и современного дизайна. Safenetpay занимается упрощением платежных систем."
+      }
+    },
+    {
+      "id": 2,
+      "icon": "/assets/icons/prosm.svg",
+      "description": {
+        "uz": "Biz ProSM ilovasiga mos veb-sayt yaratdik, u professional xizmatlarni boshqarishda yordam beradi. ProSM O‘zbekistonda xizmat ko‘rsatish tizimini optimallashtirishga ixtisoslashgan.",
+        "en": "We created a website tailored to the ProSM application, helping manage professional services. ProSM specializes in optimizing service systems in Uzbekistan.",
+        "ru": "Мы создали сайт, адаптированный под приложение ProSM, которое помогает управлять профессиональными услугами. ProSM специализируется на оптимизации систем обслуживания в Узбекистане."
+      }
+    },
+    {
+      "id": 3,
+      "icon": "/assets/icons/tdiu.svg",
+      "description": {
+        "uz": "Biz TDIU universiteti uchun o‘quv jarayonlarini raqamli boshqarishga imkon beradigan veb-saytni ishlab chiqdik. Sayt foydalanuvchilar uchun qulay interfeysga ega.",
+        "en": "We developed a website for TDIU University that enables digital management of educational processes. The site features a user-friendly interface.",
+        "ru": "Мы разработали сайт для ТГИУ, который позволяет цифровое управление образовательными процессами. Сайт имеет удобный интерфейс для пользователей."
+      }
+    }
+  ]
+}

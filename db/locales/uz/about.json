@@ -1,0 +1,16 @@
+{
+  "about-title": "UPT haqida",
+  "about-subtitle1": "UPT — O‘zbekistondagi yetakchi IT kompaniyalardan biri bo‘lib, dasturiy ta’minot ishlab chiqish, veb-ishlab chiqish, mobil ilovalar ishlab chiqish va raqamli marketing kabi keng turdagi IT xizmatlarini taklif etadi. Biz yuqori sifatli, ishonchli va samarali IT yechimlarini O‘zbekiston bizneslari uchun taqdim etishga intilamiz.",
+  "about-subtitle2": "Bizning tajribali IT mutaxassislar jamoamiz innovatsion va tejamkor IT yechimlarini taqdim etishga bag‘ishlangan bo‘lib, ular bizneslarning o‘z maqsadlariga erishishiga yordam beradi. Biz mijozlarimizning noyob ehtiyojlarini tushunish va ularning talablariga moslashtirilgan maxsus IT yechimlarini ishlab chiqish uchun ular bilan yaqindan hamkorlik qilamiz.",
+  "service-title": "Hozirda kompaniyamiz o‘z IT yechimlarini 9 ta asosiy yo‘nalishda taklif etadi:",
+  "project-title": "'UPT Project' — o‘z qadriyatlariga ega va sifat nazoratisiz o'tmaydigan loyihalarning manzili...",
+  "management": "Bulutli sayt boshqaruv dasturi - Wave, u quyidagi funksiyalarga ega",
+  "waveFeatures": [
+    "Sayt ma'lumotlarini boshqarish va tahrirlash",
+    "Saytga havolalarni qo'shish, tahrirlash va o'chirish",
+    "Saytga sahifalar qo'shish, ularni tahrirlash va o'chirish",
+    "Saytning asosiy sozlamalarini o'zgartirish imkoniyati",
+    "Saytda asosiy variantlarni yoqish va o'chirish",
+    "Saytning SEO tuzilmasini boshqarish"
+  ]
+}

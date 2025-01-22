@@ -1,0 +1,16 @@
+{
+  "about-title": "About UPT",
+  "about-subtitle1": "UPT is a leading IT company in Uzbekistan that specializes in providing a wide range of IT services, including software development, web development, mobile app development, and digital marketing. We are committed to delivering high-quality, reliable, and efficient IT solutions to businesses in Uzbekistan.",
+  "about-subtitle2": "Our team of experienced IT professionals is dedicated to providing innovative and cost-effective IT solutions that help businesses achieve their goals. We work closely with our clients to understand their unique needs and develop customized IT solutions that meet their specific requirements.",
+  "service-title": "Currently, our company offers its IT solutions in 9 main areas:",
+  "project-title": "'UPT Project' is the address of projects that have their own values and do not pass without quality control...",
+  "management": "A cloud-based site management program - Wave, which has such functionality as",
+  "waveFeatures": [
+    "Manage and edit site data",
+    "Adding, editing and deleting links to the site",
+    "Add pages to the site to edit and delete them",
+    "Ability to change the basic settings on the site",
+    "Enabling and disabling the main options on the site",
+    "Management of the SEO structure of the site"
+  ]
+}

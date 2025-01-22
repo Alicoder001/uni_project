@@ -1,0 +1,93 @@
+{
+  "title": {
+    "uz": "Biz bilan bog'laning",
+    "en": "Contact Us",
+    "ru": "Свяжитесь с нами"
+  },
+  "form": {
+    "companyName": {
+      "label": {
+        "uz": "Kompaniyangiz nomini kiriting",
+        "en": "Enter your company name",
+        "ru": "Введите название вашей компании"
+      },
+      "placeholder": {
+        "uz": "Kompaniyangiz nomini kiriting",
+        "en": "Enter your company name",
+        "ru": "Введите название вашей компании"
+      }
+    },
+    "yourName": {
+      "label": {
+        "uz": "Ismingiz",
+        "en": "Your name",
+        "ru": "Ваше имя"
+      },
+      "placeholder": {
+        "uz": "Ismingizni kiriting",
+        "en": "Enter your name",
+        "ru": "Введите ваше имя"
+      }
+    },
+    "phoneNumber": {
+      "label": {
+        "uz": "Telefon raqamingiz",
+        "en": "Your phone number",
+        "ru": "Ваш номер телефона"
+      },
+      "placeholder": {
+        "uz": "Telefon raqamingizni kiriting",
+        "en": "Your phone number",
+        "ru": "Введите ваш номер телефона"
+      }
+    },
+    "projectType": {
+      "label": {
+        "uz": "Loyiha turi",
+        "en": "Type of project",
+        "ru": "Тип проекта"
+      },
+      "options": {
+        "web": {
+          "uz": "Veb-dasturlash",
+          "en": "Web development",
+          "ru": "Веб-разработка"
+        },
+        "mobile": {
+          "uz": "Mobil dasturlash",
+          "en": "Mobile development",
+          "ru": "Мобильная разработка"
+        },
+        "desktop": {
+          "uz": "Desktop dasturlash",
+          "en": "Desktop development",
+          "ru": "Десктопная разработка"
+        },
+        "other": {
+          "uz": "Boshqa",
+          "en": "Other",
+          "ru": "Другое"
+        }
+      }
+    },
+    "projectDescription": {
+      "label": {
+        "uz": "Loyiha tavsifi",
+        "en": "Project description",
+        "ru": "Описание проекта"
+      },
+      "placeholder": {
+        "uz": "Loyihangizni bu yerda tasvirlab bering...",
+        "en": "Describe your project here...",
+        "ru": "Опишите ваш проект здесь..."
+      }
+    }
+  },
+  "button": {
+    "text": {
+      "uz": "Yuborish",
+      "en": "Submit",
+      "ru": "Отправить"
+    }
+  }
+}

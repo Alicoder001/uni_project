@@ -1,0 +1,121 @@
+{
+  "service_data": [
+    {
+      "id": 1,
+      "title": {
+        "en": "Web Development",
+        "uz": "Veb Dasturlash",
+        "ru": "Веб-разработка"
+      },
+      "description": {
+        "en": "We develop websites with high quality, from corporate websites to web applications",
+        "uz": "Biz korporativ saytlardan boshlab veb-ilovalargacha yuqori sifatli veb-saytlar yaratamiz",
+        "ru": "Мы разрабатываем высококачественные веб-сайты, от корпоративных сайтов до веб-приложений"
+      }
+    },
+    {
+      "id": 2,
+      "title": {
+        "en": "Mobile Development",
+        "uz": "Mobil Dasturlash",
+        "ru": "Мобильная разработка"
+      },
+      "description": {
+        "en": "We create mobile applications for iOS and Android platforms with intuitive user interfaces",
+        "uz": "Biz iOS va Android platformalari uchun intuitiv foydalanuvchi interfeyslariga ega mobil ilovalar yaratamiz",
+        "ru": "Мы создаем мобильные приложения для платформ iOS и Android с интуитивно понятным интерфейсом"
+      }
+    },
+    {
+      "id": 3,
+      "title": {
+        "en": "UI/UX Design",
+        "uz": "UI/UX Dizayn",
+        "ru": "UI/UX Дизайн"
+      },
+      "description": {
+        "en": "Our design team creates beautiful and functional user interfaces for web and mobile applications",
+        "uz": "Bizning dizayn jamoamiz veb va mobil ilovalar uchun chiroyli va funksional foydalanuvchi interfeyslarini yaratadi",
+        "ru": "Наша команда дизайнеров создает красивые и функциональные пользовательские интерфейсы для веб- и мобильных приложений"
+      }
+    },
+    {
+      "id": 4,
+      "title": {
+        "en": "Digital Marketing",
+        "uz": "Raqamli Marketing",
+        "ru": "Цифровой маркетинг"
+      },
+      "description": {
+        "en": "We provide digital marketing strategies to enhance your online presence",
+        "uz": "Biz onlayn ishtirokingizni oshirish uchun raqamli marketing strategiyalarini taqdim etamiz",
+        "ru": "Мы предоставляем стратегии цифрового маркетинга для улучшения вашего онлайн-присутствия"
+      }
+    },
+    {
+      "id": 5,
+      "title": {
+        "en": "SEO Optimization",
+        "uz": "SEO Optimizatsiya",
+        "ru": "SEO Оптимизация"
+      },
+      "description": {
+        "en": "Our SEO services improve your website ranking on search engines",
+        "uz": "Bizning SEO xizmatlarimiz veb-saytingizning qidiruv tizimlaridagi reytingini yaxshilaydi",
+        "ru": "Наши услуги по SEO улучшают рейтинг вашего сайта в поисковых системах"
+      }
+    },
+    {
+      "id": 6,
+      "title": {
+        "en": "E-commerce Solutions",
+        "uz": "Elektron Savdo Yechimlari",
+        "ru": "Решения для электронной коммерции"
+      },
+      "description": {
+        "en": "We build scalable and efficient e-commerce platforms to grow your business",
+        "uz": "Biz biznesingizni rivojlantirish uchun kengaytiriladigan va samarali elektron savdo platformalarini yaratamiz",
+        "ru": "Мы создаем масштабируемые и эффективные платформы электронной коммерции для развития вашего бизнеса"
+      }
+    },
+    {
+      "id": 7,
+      "title": {
+        "en": "Cloud Services",
+        "uz": "Bulut Xizmatlari",
+        "ru": "Облачные сервисы"
+      },
+      "description": {
+        "en": "We offer cloud solutions for storage, computing, and scalability",
+        "uz": "Biz saqlash, hisoblash va kengaytirish uchun bulut yechimlarini taklif qilamiz",
+        "ru": "Мы предлагаем облачные решения для хранения, вычислений и масштабируемости"
+      }
+    },
+    {
+      "id": 8,
+      "title": {
+        "en": "Custom Software Development",
+        "uz": "Maxsus Dasturiy Taminot Ishlanmasi",
+        "ru": "Разработка программного обеспечения на заказ"
+      },
+      "description": {
+        "en": "Our team develops tailor-made software to meet your specific business needs",
+        "uz": "Bizning jamoamiz sizning aniq biznes ehtiyojlaringizni qondirish uchun maxsus dasturiy ta'minot ishlab chiqadi",
+        "ru": "Наша команда разрабатывает программное обеспечение, созданное по индивидуальному заказу, для удовлетворения ваших специфических бизнес-потребностей"
+      }
+    },
+    {
+      "id": 9,
+      "title": {
+        "en": "IT Consulting",
+        "uz": "IT Konsalting",
+        "ru": "IT Консалтинг"
+      },
+      "description": {
+        "en": "We provide expert IT consulting services to optimize your technology infrastructure",
+        "uz": "Biz texnologiya infratuzilmasini optimallashtirish uchun IT konsalting xizmatlarini taqdim etamiz",
+        "ru": "Мы предоставляем экспертные услуги IT-консалтинга для оптимизации вашей технологической инфраструктуры"
+      }
+    }
+  ]
+}

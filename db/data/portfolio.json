@@ -1,0 +1,49 @@
+{
+  "portfolio_data": [
+    {
+      "id": 1,
+      "title": "Web Development",
+      "description": "We develop websites with high quality, from corporate websites to web applications"
+    },
+    {
+      "id": 2,
+      "title": "Mobile Development",
+      "description": "We create mobile applications for iOS and Android platforms with intuitive user interfaces"
+    },
+    {
+      "id": 3,
+      "title": "UI/UX Design",
+      "description": "Our design team creates beautiful and functional user interfaces for web and mobile applications"
+    },
+    {
+      "id": 4,
+      "title": "Digital Marketing",
+      "description": "We provide digital marketing strategies to enhance your online presence"
+    },
+    {
+      "id": 5,
+      "title": "SEO Optimization",
+      "description": "Our SEO services improve your website ranking on search engines"
+    },
+    {
+      "id": 6,
+      "title": "E-commerce Solutions",
+      "description": "We build scalable and efficient e-commerce platforms to grow your business"
+    },
+    {
+      "id": 7,
+      "title": "Cloud Services",
+      "description": "We offer cloud solutions for storage, computing, and scalability"
+    },
+    {
+      "id": 8,
+      "title": "Custom Software Development",
+      "description": "Our team develops tailor-made software to meet your specific business needs"
+    },
+    {
+      "id": 9,
+      "title": "IT Consulting",
+      "description": "We provide expert IT consulting services to optimize your technology infrastructure"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "links": [
+    {
+      "href": "/about",
+      "label": {
+        "en": "About us",
+        "uz": "Biz haqimizda",
+        "ru": "О нас"
+      }
+    },
+    {
+      "href": "/services",
+      "label": {
+        "en": "Services",
+        "uz": "Xizmatlar",
+        "ru": "Услуги"
+      }
+    },
+    {
+      "href": "/portfolio",
+      "label": {
+        "en": "Portfolio",
+        "uz": "Portfolio",
+        "ru": "Портфолио"
+      }
+    },
+    {
+      "href": "/contact",
+      "label": {
+        "en": "Contact",
+        "uz": "Aloqa",
+        "ru": "Контакт"
+      }
+    }
+  ],
+
+  "LANGUAGES": [
+    {
+      "code": "en",
+      "label": {
+        "en": "EN",
+        "uz": "EN",
+        "ru": "EN"
+      }
+    },
+    {
+      "code": "uz",
+      "label": {
+        "en": "UZ",
+        "uz": "O'Z",
+        "ru": "УЗ"
+      }
+    },
+    {
+      "code": "ru",
+      "label": {
+        "en": "RU",
+        "uz": "RU",
+        "ru": "РУ"
+      }
+    }
+  ]
+}

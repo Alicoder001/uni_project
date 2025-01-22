@@ -1,0 +1,21 @@
+{
+  "home": "Bosh sahifa",
+  "hero_title": "Biz raqamli yechimlarni taklif qilamiz",
+  "hero_subtitle": "har qanday murakkablikda",
+  "portfolio_button": "Portfel",
+  "call_btn": "Qo'ng'iroq qiling",
+  "about_title": "Biz haqimizda",
+  "about_subtitle": "Biz oddiy kompaniya emas, balki o‘ziga xos yechimlarni yaratishga bel bog‘lagan ijodkorlar jamoasimiz. Yo‘limiz ishonch, innovatsiya va bizning orzuyimizga ishonganlarning doimiy ko‘magi bilan yasalgan.",
+  "quick_solution": "Tezkor yechimlar",
+  "unique_projects": "Noyob loyihalar",
+  "contact_us": "Biz bilan bog'laning",
+  "view_portfolio": "Portfelni ko‘rish",
+  "experience": "Yillik tajriba",
+  "home-about": "Biz faqat kompaniya emas, balki ijodiy aql-idrok egalari jamiyatimiz. Bizning yo‘limiz ishonch, innovatsiya va bizning qarashimizga ishonganlarning qo‘llab-quvvatlashiga asoslanadi.",
+  "home-join-title": "Siz ham bu jamoaning bir qismi bo‘lishingiz mumkin :)",
+  "home-join-subtitle": "Biz har doim yangi g‘oyalar va iste’dodlarga ochiqmiz. Agar o‘z ishga ishtiyoqingiz bo‘lsa, siz haqingizda bilishni xohlaymiz.",
+  "strong-junior": "Katta Yoshdagi Junior QA Dastur Muhandisi",
+  "middle-frontend": "O‘rta Frontend Dasturchi (VueJS)",
+  "middle-designer": "O‘rta UI/UX Dizayner",
+  "middle-backend": "O‘rta Backend Dasturchi (Python Django)"
+}
