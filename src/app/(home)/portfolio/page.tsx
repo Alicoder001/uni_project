@@ -1,17 +1,22 @@
+"use client";
 import React from "react";
 import PortfolioComponent from "../../../components/portfolio-component";
+import { useGetData } from "../../../hooks/useGetData";
 
 export default function Portfolio() {
+  const portfolioData = useGetData("portfolio").data as PortfolioData;
   return (
-    <div>
-      <section
-        className="pt-32 pb-24 min-h-[50vh]"
-        style={{ background: "var(--bg-primary)" }}
-      >
-        <div className="container mx-auto px-4">
-          <PortfolioComponent />
-        </div>
-      </section>
+    <div className="h-full min-h-screen">
+      {portfolioData.portfolio_data?.length > 0 && (
+        <section
+          className="py-24  "
+          style={{ background: "var(--bg-primary)" }}
+        >
+          <div className="container mx-auto px-4">
+            <PortfolioComponent data={portfolioData} />
+          </div>
+        </section>
+      )}
     </div>
   );
 }

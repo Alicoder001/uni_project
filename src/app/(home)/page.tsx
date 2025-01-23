@@ -19,19 +19,23 @@ export default function Page() {
   const page = "home";
   const { translations } = useTranslations(locale, page);
   const { data, loading } = useGetData("service");
+  const portfolioData = useGetData("portfolio").data as PortfolioData;
   return (
     <div className="h-full">
       {loading && <Preloader loading={loading} />}
       <Hero translations={translations} />
       <About translations={translations} />
-      <section
-        className="py-24 min-h-[50vh]"
-        style={{ background: "var(--bg-primary)" }}
-      >
-        <div className="container mx-auto px-4">
-          <PortfolioComponent />
-        </div>
-      </section>
+      {portfolioData.portfolio_data?.length > 0 && (
+        <section
+          className="py-24 min-h-[50vh]"
+          style={{ background: "var(--bg-primary)" }}
+        >
+          <div className="container mx-auto px-4">
+            <PortfolioComponent data={portfolioData} />
+          </div>
+        </section>
+      )}
+
       {(data as IService).service_data?.length > 0 && (
         <section className="py-24" style={{ background: "var(--bg-primary)" }}>
           <div className="container">

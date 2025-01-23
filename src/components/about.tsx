@@ -7,7 +7,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "./button";
-import Reordering from "./motion-slider";
 
 const images = [
   "/assets/images/about_laptop.png",

@@ -26,7 +26,6 @@ export default function AnimatedNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
-
   const height = useTransform(scrollY, [0, 100], ["96px", "80px"]);
   const background = useTransform(
     scrollY,
@@ -113,11 +112,15 @@ export default function AnimatedNavbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
+              onClick={() => setIsMenuOpen(false)}
             >
               <div className="absolute top-4 left-4">
                 <button
                   className="text-white text-lg font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsMenuOpen(false);
+                  }}
                 >
                   <X size={24} />
                 </button>
@@ -149,10 +152,12 @@ export default function AnimatedNavbar() {
 
 function ContactNumber() {
   return (
-    <div className="text-lg font-inter tracking-[0.5px] font-medium text-white/60 hover:text-white cursor-pointer duration-300">
-      +998 71
-      <span className="text-white ml-1">200 70 07</span>
-    </div>
+    <a href="tel:+998712007007">
+      <div className="text-lg font-inter tracking-[0.5px] font-medium text-white/60 hover:text-white cursor-pointer duration-300">
+        +998 71
+        <span className="text-white ml-1">200 70 07</span>
+      </div>
+    </a>
   );
 }
 
@@ -168,6 +173,7 @@ function LanguageSelector({
     langs.find((predicate) => predicate.code === locale) || langs[0]
   );
   const [isOpen, setIsOpen] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   let params = window.location.pathname.split("/");
 
@@ -176,9 +182,26 @@ function LanguageSelector({
     ...langs?.filter((lang) => lang.code !== selectedLanguage.code),
   ];
   const setLang = useLangStorage((state: any) => state.setLang);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!(e.target as HTMLElement).closest(".language-selector")) {
+        setIsOpen(false);
+        setIsExpanded(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <div className="relative">
-      <div className="hidden lg:flex items-center gap-1 border group border-white/55 hover:border-white/80 p-1 rounded-lg cursor-pointer group duration-300 w-20 hover:w-[150px]">
+    <div className="relative language-selector">
+      <div
+        className={`hidden lg:flex items-center gap-1 border border-white/55 hover:border-white/80 p-1 rounded-lg cursor-pointer duration-300 ${
+          isExpanded ? "w-[150px]" : "w-20"
+        }`}
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
         <Image
           src="/assets/icons/globe.svg"
           width={24}
@@ -186,20 +209,24 @@ function LanguageSelector({
           alt="Language Selector"
           priority
         />
-        <ul className="flex items-center gap-4 overflow-hidden duration-500 group">
+        <ul
+          style={!isExpanded ? { pointerEvents: "none" } : {}}
+          className="flex items-center gap-4 overflow-hidden duration-500"
+        >
           {sortedLanguages.map((lang, index) => (
             <li
               key={lang.code}
-              className={`whitespace-nowrap duration-300 px-2 group-hover:px-0 ${
+              className={`whitespace-nowrap duration-300 ${
                 index === 0
-                  ? "text-white mr-12 group-hover:mr-0"
-                  : "text-white/60  hover:text-white opacity-0 group-hover:opacity-100"
-              }`}
-              onClick={() => {
-                params[1] = lang.code;
+                  ? "text-white"
+                  : "text-white/60 hover:text-white opacity-0"
+              } ${isExpanded ? "opacity-100" : ""}`}
+              onClick={(e) => {
+                e.stopPropagation();
                 setLang(lang.code);
                 localStorage.setItem("lang", lang.code);
                 setSelectedLanguage(lang);
+                setIsExpanded(false);
               }}
             >
               {lang.label[locale]}

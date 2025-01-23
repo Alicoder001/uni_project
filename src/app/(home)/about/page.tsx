@@ -20,13 +20,12 @@ const About = () => {
   const page = "about";
   const {
     translations,
-  }: { translations: { [key: string]: string | string[] } } = useTranslations(
-    locale,
-    page
-  );
+    loading,
+  }: { translations: { [key: string]: string | string[] }; loading: boolean } =
+    useTranslations(locale, page);
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
-      {/* {loading && <Preloader />} */}
+      {loading && <Preloader loading={loading} />}
       {/* About Section */}
       {Object.keys(translations).length > 0 && ready && (
         <>

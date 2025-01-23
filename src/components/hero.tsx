@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "./button";
 import useLangStorage from "../store/langStorage";
+import Link from "next/link";
 
 export default function Hero({
   translations,
@@ -67,33 +68,37 @@ export default function Hero({
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.4 }}
             >
-              <Button
-                text="Portfolio"
-                element={
-                  <div className="w-6 h-6 flex items-center justify-center bg-[var(--primary-color)] rounded-full group-hover:rotate-45 duration-300">
+              <Link href={"/portfolio"}>
+                <Button
+                  text="Portfolio"
+                  element={
+                    <div className="w-6 h-6 flex items-center justify-center bg-[var(--primary-color)] rounded-full group-hover:rotate-45 duration-300">
+                      <Image
+                        src="/assets/icons/button-arrow.svg"
+                        width={13}
+                        height={24}
+                        alt="logo"
+                        priority
+                      />
+                    </div>
+                  }
+                />
+              </Link>
+              <Link href={"/contact"}>
+                <Button
+                  type="secondary"
+                  text="Call"
+                  element={
                     <Image
-                      src="/assets/icons/button-arrow.svg"
-                      width={13}
+                      src="/assets/icons/call.svg"
+                      width={24}
                       height={24}
                       alt="logo"
                       priority
                     />
-                  </div>
-                }
-              />
-              <Button
-                type="secondary"
-                text="Call"
-                element={
-                  <Image
-                    src="/assets/icons/call.svg"
-                    width={24}
-                    height={24}
-                    alt="logo"
-                    priority
-                  />
-                }
-              />
+                  }
+                />
+              </Link>
             </motion.div>
           </>
         )}

@@ -89,5 +89,64 @@
       "en": "Submit",
       "ru": "Отправить"
     }
+  },
+  "validationErrors": {
+    "companyName": {
+      "required": {
+        "uz": "Kompaniya nomi kiritilishi shart!",
+        "ru": "Название компании обязательно!",
+        "en": "Company name is required!"
+      }
+    },
+    "name": {
+      "required": {
+        "uz": "Ismingizni kiritishingiz shart!",
+        "ru": "Ваше имя обязательно!",
+        "en": "Your name is required!"
+      }
+    },
+    "phone": {
+      "required": {
+        "uz": "Telefon raqamini kiritishingiz shart!",
+        "ru": "Номер телефона обязателен!",
+        "en": "Phone number is required!"
+      },
+      "invalid": {
+        "uz": "Telefon raqami +998 formatida bo'lishi kerak!",
+        "ru": "Номер телефона должен быть в формате +998!",
+        "en": "Phone number must be in +998 format!"
+      }
+    },
+    "projectType": {
+      "required": {
+        "uz": "Loyiha turini tanlashingiz shart!",
+        "ru": "Тип проекта обязателен!",
+        "en": "Project type is required!"
+      }
+    },
+    "description": {
+      "required": {
+        "uz": "Loyiha tavsifi kiritilishi shart!",
+        "ru": "Описание проекта обязательно!",
+        "en": "Project description is required!"
+      },
+      "minLength": {
+        "uz": "Tavsif kamida 10 ta belgidan iborat bo'lishi kerak!",
+        "ru": "Описание должно содержать не менее 10 символов!",
+        "en": "Description must be at least 10 characters long!"
+      }
+    }
+  },
+  "notifications": {
+    "success": {
+      "uz": "Muvaffaqiyatli yuborildi!",
+      "ru": "Успешно отправлено!",
+      "en": "Successfully submitted!"
+    },
+    "error": {
+      "uz": "Yuborishda xatolik yuz berdi!",
+      "ru": "Произошла ошибка при отправке!",
+      "en": "An error occurred while submitting!"
+    }
   }
 }
