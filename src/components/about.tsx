@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "./button";
+import Reordering from "./motion-slider";
 
 const images = [
   "/assets/images/about_laptop.png",
@@ -36,17 +37,22 @@ export default function About({
       },
     ],
   };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <section className="bg-gradient-to-b from-gray-900 to-gray-800 py-10 md:py-20 overflow-hidden">
+    <section
+      className="bg-gradient-to-b from-gray-900 to-gray-800 py-10 md:py-20 overflow-hidden"
+      ref={ref}
+    >
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
           {/* Images Section */}
           <motion.div
             className="w-full lg:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: -500 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="mb-8">
               <Slider {...sliderSettings} className="custom-slider">
@@ -68,9 +74,9 @@ export default function About({
           {/* Info Section */}
           <motion.div
             className="w-full lg:w-1/2 space-y-6"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, y: 500, x: 100 }}
+            animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
+            transition={{ duration: 1, delay: 0.5, damping: 50, stiffness: 50 }}
           >
             <div className="flex items-center gap-2">
               <div className="h-1 w-10 bg-[var(--text-color)] rounded"></div>

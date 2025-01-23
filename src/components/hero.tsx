@@ -26,9 +26,15 @@ export default function Hero({
           <>
             <motion.div
               className="hidden sm:block absolute  top-36 md:top-36 lg:top-44 right-0 md:right-16 w-[400px] h-[400px] "
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.5 }}
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.9,
+                delay: 0.5,
+                damping: 20,
+                stiffness: 100,
+                type: "spring",
+              }}
             >
               <Image
                 className="opacity-20"
@@ -40,7 +46,7 @@ export default function Hero({
               />
             </motion.div>
             <motion.h2
-              className="mb-4 lg:mb-8 md:max-w-[450px] lg:max-w-[350px] leading-[1.3]"
+              className="mb-4 lg:mb-8 md:max-w-[450px] leading-[1.3]"
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.7 }}

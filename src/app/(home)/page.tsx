@@ -21,7 +21,7 @@ export default function Page() {
   const { data, loading } = useGetData("service");
   return (
     <div className="h-full">
-      {loading && <Preloader />}
+      {loading && <Preloader loading={loading} />}
       <Hero translations={translations} />
       <About translations={translations} />
       <section

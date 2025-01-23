@@ -12,7 +12,7 @@ export default function Contact() {
   const contactData = useGetData("contact").data as ContactPage;
   return (
     <div
-      className="min-h-screen flex items-center justify-center px-4 pt-32 pb-24"
+      className="min-h-screen flex items-center justify-center pt-32 pb-24"
       style={{ background: "var(--bg-primary)" }}
     >
       <div className="container max-w-4xl">

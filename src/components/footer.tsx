@@ -53,7 +53,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={scrollToTop}
-                className="absolute right-0 top-[-20px] border-[#A5A5A6] border-[1px] rounded-full w-12 h-12 flex items-center justify-center cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors"
+                className="absolute right-0 top-[-100px] sm:top-[-20px]  border-[#A5A5A6] border-[1px] rounded-full w-12 h-12 flex items-center justify-center cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors"
                 aria-label="Scroll to top"
               >
                 <Image

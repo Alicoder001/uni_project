@@ -11,7 +11,7 @@ export default function Service() {
   return (
     <div>
       <section
-        className="pt-32 pb-24 h-screen"
+        className="pt-32 pb-24 min-h-screen"
         style={{ background: "var(--bg-primary)" }}
       >
         <div className="container">
