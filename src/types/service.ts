@@ -1,20 +1,14 @@
-export interface IService {
-  service_data: ServiceData[];
-}
-
-export interface ServiceData {
+export interface IServiceItem {
   id: number;
-  title: Title;
-  description: Description;
+  type: "web" | "mobile";
+  title: Translations;
+  description: Translations;
 }
 
-export interface Title {
-  en: string;
-  uz: string;
-  ru: string;
+export interface IService {
+  service_data: IServiceItem[];
 }
-
-export interface Description {
+interface Translations {
   en: string;
   uz: string;
   ru: string;

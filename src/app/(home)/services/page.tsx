@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ServiceComponent from "../../../components/service-component";
-import useLangStorage from "../../../store/langStorage";
+import useLangStore from "../../../store/langStore";
 import { useGetData } from "../../../hooks/useGetData";
 import { ILocale } from "../../../types";
 import { IService } from "../../../types/service";

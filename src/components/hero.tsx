@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "./button";
-import useLangStorage from "../store/langStorage";
+import useLangStore, { LangStore } from "../store/langStore";
 import Link from "next/link";
 
 export default function Hero({
@@ -11,7 +11,7 @@ export default function Hero({
 }: {
   translations: { [key: string]: string };
 }) {
-  const ready = useLangStorage((state: any) => state.ready);
+  const ready = useLangStore((state: LangStore) => state.ready);
 
   return (
     <section

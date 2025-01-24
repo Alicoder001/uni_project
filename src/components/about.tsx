@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "./button";
+import Link from "next/link";
 
 const images = [
   "/assets/images/about_laptop.png",
@@ -122,8 +123,12 @@ export default function About({
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button text="View Portfolio" type="primary" />
-              <Button text="Contact Us" type="secondary" />
+              <Link href="/portfolio">
+                <Button text="View Portfolio" type="primary" />
+              </Link>
+              <Link href="/contact">
+                <Button text="Contact Us" type="secondary" />
+              </Link>
             </div>
 
             <div className="mt-10 p-6 bg-[var(--item-bg)] rounded-lg shadow-lg">

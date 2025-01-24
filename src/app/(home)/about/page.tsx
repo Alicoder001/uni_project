@@ -5,15 +5,15 @@ import Image from "next/image";
 import Service from "../../../components/service-component";
 import Button from "../../../components/button";
 import { useState } from "react";
-import useLangStorage from "../../../store/langStorage";
+import useLangStore, { LangStore } from "../../../store/langStore";
 import { useTranslations } from "../../../hooks/useTranslations";
 import { ILocale } from "../../../types";
 import { useGetData } from "../../../hooks/useGetData";
 import { IService } from "../../../types/service";
-import Preloader from "../../../components/Preloader";
+import Link from "next/link";
 
 const About = () => {
-  const { ready, lang } = useLangStorage((state: any) => state);
+  const { ready, lang } = useLangStore((state: LangStore) => state);
   const locale = (lang as ILocale) || "en";
   const serviceData = useGetData("service").data;
   const projectData = useGetData("project").data as IProjectsData;
@@ -25,7 +25,6 @@ const About = () => {
     useTranslations(locale, page);
   return (
     <div className="min-h-screen" style={{ background: "var(--bg-primary)" }}>
-      {loading && <Preloader loading={loading} />}
       {/* About Section */}
       {Object.keys(translations).length > 0 && ready && (
         <>
@@ -135,20 +134,22 @@ const About = () => {
                       </motion.li>
                     ))}
                   </ul>
-                  <Button
-                    text="Portfolio"
-                    element={
-                      <div className="w-6 h-6 flex items-center justify-center bg-blue-700 rounded-full group-hover:rotate-45 duration-300">
-                        <Image
-                          src="/assets/icons/button-arrow.svg"
-                          width={13}
-                          height={24}
-                          alt="logo"
-                          priority
-                        />
-                      </div>
-                    }
-                  />
+                  <Link href={`/portfolio`}>
+                    <Button
+                      text="Portfolio"
+                      element={
+                        <div className="w-6 h-6 flex items-center justify-center bg-blue-700 rounded-full group-hover:rotate-45 duration-300">
+                          <Image
+                            src="/assets/icons/button-arrow.svg"
+                            width={13}
+                            height={24}
+                            alt="logo"
+                            priority
+                          />
+                        </div>
+                      }
+                    />
+                  </Link>
                 </motion.div>
               </div>
             </motion.section>

@@ -15,11 +15,11 @@ import { INavbarTypes } from "../types/navbar";
 import { ILocale } from "../types";
 import { ILanguage } from "../types/navbar";
 import { useRouter } from "next/navigation";
-import useLangStorage from "../store/langStorage";
+import useLangStore, { LangStore } from "../store/langStore";
 
 export default function AnimatedNavbar() {
   const locale =
-    (useLangStorage((state: any) => state.lang) as ILocale) || "en";
+    (useLangStore((state: LangStore) => state.lang) as ILocale) || "en";
   const { data } = useGetData("navbar");
   const nav_links = (data as INavbarTypes).links;
   const langs = (data as INavbarTypes).LANGUAGES;
@@ -181,7 +181,7 @@ function LanguageSelector({
     selectedLanguage,
     ...langs?.filter((lang) => lang.code !== selectedLanguage.code),
   ];
-  const setLang = useLangStorage((state: any) => state.setLang);
+  const setLang = useLangStore((state: LangStore) => state.setLang);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {

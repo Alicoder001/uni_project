@@ -3,20 +3,15 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useGetData } from "../hooks/useGetData";
-import useLangStorage from "../store/langStorage";
+import useLangStore, { LangStore } from "../store/langStore";
 import { ILocale } from "../types";
 import { IService } from "../types/service";
+import Link from "next/link";
 
 interface ServiceProps {
   title: string;
   type?: "primary" | "secondary";
   data: IService;
-}
-
-interface ServiceItem {
-  id: number;
-  title: string;
-  description: string;
 }
 
 export default function ServiceComponent({
@@ -25,7 +20,7 @@ export default function ServiceComponent({
   data,
 }: ServiceProps) {
   const locale =
-    (useLangStorage((state: any) => state.lang) as ILocale) || "en";
+    (useLangStore((state: LangStore) => state.lang) as ILocale) || "en";
   const serviceItems = (data as IService)?.["service_data"];
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -84,12 +79,14 @@ export default function ServiceComponent({
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-[var(--item-bg)] rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 "
             >
-              <h4 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                {item.title[locale]}
-              </h4>
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                {item.description[locale]}
-              </p>
+              <Link href={`/contact/${item.type}`}>
+                <h4 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                  {item.title[locale]}
+                </h4>
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                  {item.description[locale]}
+                </p>
+              </Link>
             </motion.li>
           ))}
         </ul>

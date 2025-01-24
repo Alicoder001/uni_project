@@ -4,13 +4,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
-import useLangStorage from "../store/langStorage";
+import useLangStore, { LangStore } from "../store/langStore";
 import { ILocale } from "../types";
 
 const filters = ["all", "branding", "mobile", "website"];
 
 export default function PortfolioComponent({ data }: { data: PortfolioData }) {
-  const locale = useLangStorage((state: any) => state.lang) as ILocale;
+  const locale = useLangStore((state: LangStore) => state.lang) as ILocale;
 
   const [activeFilter, setActiveFilter] = useState("all");
   const items = (data as PortfolioData).portfolio_data;

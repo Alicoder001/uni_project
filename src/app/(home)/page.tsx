@@ -8,13 +8,13 @@ import ServiceComponent from "../../components/service-component";
 import { useGetData } from "../../hooks/useGetData";
 import { useTranslations } from "../../hooks/useTranslations";
 
-import useLangStorage from "../../store/langStorage";
+import useLangStore, { LangStore } from "../../store/langStore";
 import { ILocale } from "../../types";
 import { IService } from "../../types/service";
 
 export default function Page() {
   const locale =
-    (useLangStorage((state: any) => state.lang) as ILocale) || "en";
+    (useLangStore((state: LangStore) => state.lang) as ILocale) || "en";
 
   const page = "home";
   const { translations } = useTranslations(locale, page);

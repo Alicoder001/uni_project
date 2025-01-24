@@ -58,11 +58,6 @@
           "en": "Mobile development",
           "ru": "Мобильная разработка"
         },
-        "desktop": {
-          "uz": "Desktop dasturlash",
-          "en": "Desktop development",
-          "ru": "Десктопная разработка"
-        },
         "other": {
           "uz": "Boshqa",
           "en": "Other",

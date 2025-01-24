@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
-import useLangStorage from "../store/langStorage";
+import useLangStore, { LangStore } from "../store/langStore";
 import { ILocale } from "../types";
 import { useTranslations } from "../hooks/useTranslations";
 import { useGetData } from "../hooks/useGetData";
@@ -14,7 +14,7 @@ const SOCIAL_ICONS = ["facebook", "x", "instagram", "telegram", "linkedin"];
 
 export default function Footer() {
   const locale =
-    (useLangStorage((state: any) => state.lang) as ILocale) || "en";
+    (useLangStore((state: LangStore) => state.lang) as ILocale) || "en";
 
   const page = "common";
 
@@ -26,8 +26,14 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const latitude = "41°00'07\"N";
+  const longitude = "71°39'32\"E";
+  const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(
+    latitude
+  )},${encodeURIComponent(longitude)}`;
+
   return (
-    <footer className="bg-gray-900 pt-10 pb-6">
+    <footer className=" flex-grow-0 bg-gray-900 pt-10 pb-6">
       <div className="container mx-auto px-4">
         {Object.keys(translations).length > 0 && nav_links?.length > 0 && (
           <>
@@ -152,7 +158,9 @@ export default function Footer() {
                   {translations["adress"]}
                 </p>
                 <Link
-                  href="/map"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={mapUrl}
                   className="px-3 py-2 bg-white/[0.16] rounded-[6px] text-white hover:bg-white/[0.24] transition-colors"
                 >
                   {translations["map"]}

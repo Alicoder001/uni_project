@@ -150,3 +150,4 @@ export interface ContactData {
     };
   };
 }
+export type ContactCategoryType = "web" | "mobile" | "other" | null;
