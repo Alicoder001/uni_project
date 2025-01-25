@@ -2,16 +2,16 @@
 
 import { useState, useEffect } from "react";
 
-const Preloader = ({ loading }: { loading: boolean }) => {
-  const [videoEnded, setVideoEnded] = useState(false);
-
+const Preloader = ({
+  setVideoEnded,
+}: {
+  setVideoEnded: (state: boolean) => void;
+}) => {
   const handleVideoEnd = () => {
     setVideoEnded(true);
   };
 
-  const shouldShowPreloader = loading || !videoEnded;
-
-  return shouldShowPreloader ? (
+  return (
     <div
       style={{
         position: "fixed",
@@ -19,7 +19,7 @@ const Preloader = ({ loading }: { loading: boolean }) => {
         left: 0,
         width: "100%",
         height: "100%",
-        background: "rgb(12, 21, 48)",
+        background: "#051448",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -37,7 +37,7 @@ const Preloader = ({ loading }: { loading: boolean }) => {
         Loading...
       </video>
     </div>
-  ) : null;
+  );
 };
 
 export default Preloader;

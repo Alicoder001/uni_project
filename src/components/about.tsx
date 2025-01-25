@@ -74,8 +74,8 @@ export default function About({
           {/* Info Section */}
           <motion.div
             className="w-full lg:w-1/2 space-y-6"
-            initial={{ opacity: 0, y: 500, x: 100 }}
-            animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
+            initial={{ opacity: 0, x: 100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1, delay: 0.5, damping: 50, stiffness: 50 }}
           >
             <div className="flex items-center gap-2">

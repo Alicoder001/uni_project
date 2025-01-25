@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import About from "../../components/about";
 import Adventage from "../../components/adventage";
 import Hero from "../../components/hero";
@@ -20,30 +21,40 @@ export default function Page() {
   const { translations } = useTranslations(locale, page);
   const { data, loading } = useGetData("service");
   const portfolioData = useGetData("portfolio").data as PortfolioData;
+  const [videoEnded, setVideoEnded] = useState(false);
+  console.log(!loading && videoEnded);
   return (
-    <div className="h-full">
-      {loading && <Preloader loading={loading} />}
-      <Hero translations={translations} />
-      <About translations={translations} />
-      {portfolioData.portfolio_data?.length > 0 && (
-        <section
-          className="py-24 min-h-[50vh]"
-          style={{ background: "var(--bg-primary)" }}
-        >
-          <div className="container mx-auto px-4">
-            <PortfolioComponent data={portfolioData} />
-          </div>
-        </section>
-      )}
+    <>
+      {!loading && videoEnded ? (
+        <div className="h-full">
+          <Hero translations={translations} />
+          <About translations={translations} />
+          {portfolioData.portfolio_data?.length > 0 && (
+            <section
+              className="py-24 min-h-[50vh]"
+              style={{ background: "var(--bg-primary)" }}
+            >
+              <div className="container mx-auto px-4">
+                <PortfolioComponent data={portfolioData} />
+              </div>
+            </section>
+          )}
 
-      {(data as IService).service_data?.length > 0 && (
-        <section className="py-24" style={{ background: "var(--bg-primary)" }}>
-          <div className="container">
-            <ServiceComponent title="Services" data={data as IService} />
-          </div>
-        </section>
+          {(data as IService).service_data?.length > 0 && (
+            <section
+              className="py-24"
+              style={{ background: "var(--bg-primary)" }}
+            >
+              <div className="container">
+                <ServiceComponent title="Services" data={data as IService} />
+              </div>
+            </section>
+          )}
+          <Adventage />
+        </div>
+      ) : (
+        <Preloader setVideoEnded={setVideoEnded} />
       )}
-      <Adventage />
-    </div>
+    </>
   );
 }
