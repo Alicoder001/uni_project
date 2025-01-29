@@ -19,7 +19,7 @@ const Preloader = ({
         left: 0,
         width: "100%",
         height: "100%",
-        background: "#051448",
+        background: "#000000",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
