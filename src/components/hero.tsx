@@ -17,9 +17,8 @@ export default function Hero({
     <section
       className="min-h-[110vh] h-full mb-[0.5px] relative overflow-hidden"
       style={{
-        background: `var(--hero-gradient) center bottom / 100% 400px no-repeat,
-        url('/assets/images/ice.png') center bottom -100px / contain no-repeat,                    
-        url('/assets/images/image.png') center / cover no-repeat`,
+        background: `var(--hero-gradient) center bottom / 100% 400px no-repeat,             
+        url('/assets/images/image.jpg') center / cover no-repeat`,
       }}
     >
       <div className="container flex pt-52 md:pt-60 lg:pt-64 h-full flex-col relative ">
@@ -38,7 +37,7 @@ export default function Hero({
               }}
             >
               <Image
-                className="opacity-20"
+                className="opacity-50"
                 src="/assets/icons/logo.png"
                 alt="icon"
                 width={500}
