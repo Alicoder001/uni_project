@@ -50,7 +50,7 @@ export default function Page() {
               </div>
             </section>
           )}
-          <Adventage />
+          <Adventage translations={translations} />
         </div>
       ) : (
         <Preloader setVideoEnded={setVideoEnded} />

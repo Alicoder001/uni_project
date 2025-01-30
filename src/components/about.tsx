@@ -10,33 +10,37 @@ import Button from "./button";
 import Link from "next/link";
 
 const images = [
-  "/assets/images/about_laptop.png",
-  "/assets/images/about_team.png",
+  "/assets/images/team_1.jpg",
+  "/assets/images/team_2.jpg",
+  "/assets/images/team_3.jpg",
+  "/assets/images/team_4.jpg",
+  "/assets/images/team_5.jpg",
 ];
 
-export default function About({
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        arrows: false,
+      },
+    },
+  ],
+};
+
+const About = ({
   translations,
 }: {
   translations: { [key: string]: string };
-}) {
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          arrows: false,
-        },
-      },
-    ],
-  };
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -61,8 +65,8 @@ export default function About({
                     <Image
                       src={src || "/placeholder.svg"}
                       alt={`About image ${index + 1}`}
-                      width={600}
-                      height={400}
+                      width={800}
+                      height={500}
                       className="rounded-lg shadow-lg object-cover w-full h-[300px] md:h-[400px]"
                     />
                   </div>
@@ -132,7 +136,7 @@ export default function About({
             </div>
 
             <div className="mt-10 p-6 bg-[var(--item-bg)] rounded-lg shadow-lg">
-              <h3 className="text-3xl font-bold text-white mb-2">10+</h3>
+              <h3 className="text-3xl font-bold text-white mb-2">5</h3>
               <p className="text-gray-400 text-sm uppercase font-bold">
                 {translations["experience"]}
               </p>
@@ -169,4 +173,6 @@ export default function About({
       `}</style>
     </section>
   );
-}
+};
+
+export default About;
