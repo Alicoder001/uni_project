@@ -1,8 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import useLangStore, { LangStore } from "../store/langStore";
 import { ILocale } from "../types";
@@ -13,15 +12,16 @@ import { INavbarTypes } from "../types/navbar";
 const SOCIAL_ICONS = ["facebook", "x", "instagram", "telegram", "linkedin"];
 
 export default function Footer() {
+  const [showButton, setShowButton] = useState(false);
+
   const locale =
     (useLangStore((state: LangStore) => state.lang) as ILocale) || "en";
-
   const page = "common";
-
   const { data } = useGetData("navbar");
   const nav_links = (data as INavbarTypes).links;
   const { translations }: { translations: { [keys: string]: string } } =
     useTranslations(locale, page);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -32,8 +32,22 @@ export default function Footer() {
     latitude
   )},${encodeURIComponent(longitude)}`;
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const footer = document.querySelector("footer");
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        const isFooterVisible = footerRect.top < window.innerHeight;
+        setShowButton(isFooterVisible && window.scrollY > 200);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <footer className=" flex-grow-0 bg-gray-900 pt-10 pb-6">
+    <footer className="flex-grow-0 bg-gray-900 pt-10 pb-6">
       <div className="container mx-auto px-4">
         {Object.keys(translations).length > 0 && nav_links?.length > 0 && (
           <>
@@ -55,22 +69,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={scrollToTop}
-                className="absolute right-0 top-[-100px] sm:top-[-20px]  border-[#A5A5A6] border-[1px] rounded-full w-12 h-12 flex items-center justify-center cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors"
-                aria-label="Scroll to top"
-              >
-                <Image
-                  src="/assets/icons/arrow-top.svg"
-                  width={11}
-                  height={23}
-                  alt="Scroll to top"
-                />
-              </motion.button>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -131,7 +130,6 @@ export default function Footer() {
                 </div>
               </div>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -170,6 +168,22 @@ export default function Footer() {
           </>
         )}
       </div>
+      {showButton && (
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={scrollToTop}
+          className="fixed bottom-52 right-6 border-[#A5A5A6] border-[1px] rounded-full w-12 h-12 flex items-center justify-center cursor-pointer bg-gray-800 hover:bg-gray-700 transition-colors z-50"
+          aria-label="Scroll to top"
+        >
+          <Image
+            src="/assets/icons/arrow-top.svg"
+            width={11}
+            height={23}
+            alt="Scroll to top"
+          />
+        </motion.button>
+      )}
     </footer>
   );
 }

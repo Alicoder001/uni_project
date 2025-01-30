@@ -22,7 +22,6 @@ export default function Page() {
   const { data, loading } = useGetData("service");
   const portfolioData = useGetData("portfolio").data as PortfolioData;
   const [videoEnded, setVideoEnded] = useState(false);
-  console.log(!loading && videoEnded);
   return (
     <>
       {!loading && videoEnded ? (

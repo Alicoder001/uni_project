@@ -19,7 +19,6 @@ export default function CotactComponent({
 }) {
   const locale = useLangStore((state: LangStore) => state.lang) as ILocale;
   const contactData = useGetData("contact").data as ContactData;
-  console.log(contactData);
   const schema = yup.object().shape({
     companyName: yup
       .string()
@@ -83,7 +82,7 @@ export default function CotactComponent({
     >
       <div className="container max-w-4xl">
         {Object.keys(contactData).length > 0 && (
-          <div className="bg-[var(--bg-secondary)] rounded-lg p-8 shadow-lg">
+          <div className="bg-[var(--bg-secondary)] rounded-lg py-8 px-4 md:px-8 shadow-lg">
             <h1 className="text-white text-2xl font-bold mb-6">
               {contactData.title[locale]}
             </h1>

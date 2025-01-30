@@ -1,28 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getFetchData } from "../lib/getFetchData";
 
+const cache = new Map(); // Kesh uchun obyekt
+
 export const useGetData = (filename: string) => {
-  const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(() => cache.get(filename) || {});
+  const [loading, setLoading] = useState(!cache.has(filename));
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchFetch = async () => {
-      try {
-        setLoading(true);
-        const data = await getFetchData(filename);
-        setData(data);
-        setError(null);
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load translations.");
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchData = useCallback(async () => {
+    if (cache.has(filename)) {
+      setData(cache.get(filename));
+      setLoading(false);
+      return;
+    }
 
-    fetchFetch();
+    try {
+      setLoading(true);
+      const fetchedData = await getFetchData(filename);
+      cache.set(filename, fetchedData);
+      setData(fetchedData);
+      setError(null);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load data.");
+    } finally {
+      setLoading(false);
+    }
   }, [filename]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return { data, loading, error };
 };
