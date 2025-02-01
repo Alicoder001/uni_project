@@ -3,6 +3,7 @@ import webpack from "webpack";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  swcMinify: false,
 };
 
 export default nextConfig;
