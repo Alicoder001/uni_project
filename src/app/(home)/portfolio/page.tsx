@@ -7,7 +7,7 @@ export default function Portfolio() {
   const portfolioData = useGetData("portfolio").data as PortfolioData;
   return (
     <div className="h-full min-h-screen">
-      {portfolioData.portfolio_data?.length > 0 && (
+      {Object.keys(portfolioData).length > 0 && (
         <section
           className="py-24  "
           style={{ background: "var(--bg-primary)" }}

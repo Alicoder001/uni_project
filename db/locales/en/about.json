@@ -12,5 +12,6 @@
     "Ability to change the basic settings on the site",
     "Enabling and disabling the main options on the site",
     "Management of the SEO structure of the site"
-  ]
+  ],
+  "button_title": "Portfolio"
 }

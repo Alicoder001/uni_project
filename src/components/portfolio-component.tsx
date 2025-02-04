@@ -7,8 +7,6 @@ import { motion } from "framer-motion";
 import useLangStore, { LangStore } from "../store/langStore";
 import { ILocale } from "../types";
 
-const filters = ["all", "branding", "mobile", "website"];
-
 export default function PortfolioComponent({ data }: { data: PortfolioData }) {
   const locale = useLangStore((state: LangStore) => state.lang) as ILocale;
 
@@ -32,16 +30,20 @@ export default function PortfolioComponent({ data }: { data: PortfolioData }) {
   return (
     <>
       <header className="mb-8">
-        <h1 className="text-white text-3xl font-bold mb-4">Portfolio</h1>
+        <h1 className="text-white text-3xl font-bold mb-4">
+          {data.title && data.title[locale]}
+        </h1>
         <div className="flex flex-wrap gap-4 text-white/60">
-          {filters?.map((filter) => (
+          {data?.categories?.map((filter) => (
             <button
-              key={filter}
-              onClick={() => handleFilterChange(filter)}
+              key={filter.type}
+              onClick={() => handleFilterChange(filter.type)}
               className={`capitalize cursor-pointer transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-white/20 rounded px-3 py-1
-                  ${activeFilter === filter ? "text-white bg-white/10" : ""}`}
+                  ${
+                    activeFilter === filter.type ? "text-white bg-white/10" : ""
+                  }`}
             >
-              {filter}
+              {filter.label[locale]}
             </button>
           ))}
         </div>

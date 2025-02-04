@@ -136,7 +136,7 @@ const About = () => {
                   </ul>
                   <Link href={`/portfolio`}>
                     <Button
-                      text="Portfolio"
+                      text={translations["button_title"] as string}
                       element={
                         <div className="w-6 h-6 flex items-center justify-center bg-blue-700 rounded-full group-hover:rotate-45 duration-300">
                           <Image

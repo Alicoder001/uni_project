@@ -45,7 +45,12 @@ export default function Page() {
               style={{ background: "var(--bg-primary)" }}
             >
               <div className="container">
-                <ServiceComponent title="Services" data={data as IService} />
+                <ServiceComponent
+                  title={
+                    (translations as { [key: string]: string })["service_title"]
+                  }
+                  data={data as IService}
+                />
               </div>
             </section>
           )}

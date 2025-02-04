@@ -80,5 +80,44 @@
       "image": "/assets/images/express.png",
       "large": false
     }
+  ],
+  "title": {
+    "en": "Portfolio",
+    "uz": "Portfolio",
+    "ru": "Портфолио"
+  },
+  "categories": [
+    {
+      "type": "all",
+      "label": {
+        "en": "All",
+        "uz": "Barchasi",
+        "ru": "Все"
+      }
+    },
+    {
+      "type": "branding",
+      "label": {
+        "en": "Branding",
+        "uz": "Brending",
+        "ru": "Брендинг"
+      }
+    },
+    {
+      "type": "website",
+      "label": {
+        "en": "Website",
+        "uz": "Veb-sayt",
+        "ru": "Веб-сайт"
+      }
+    },
+    {
+      "type": "mobile",
+      "label": {
+        "en": "Mobile",
+        "uz": "Mobil",
+        "ru": "Мобильное"
+      }
+    }
   ]
 }

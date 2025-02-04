@@ -69,7 +69,7 @@ export default function Hero({
             >
               <Link href={"/portfolio"}>
                 <Button
-                  text="Portfolio"
+                  text={translations["portfolio_button"]}
                   element={
                     <div className="w-6 h-6 flex items-center justify-center bg-[var(--primary-color)] rounded-full group-hover:rotate-45 duration-300">
                       <Image
@@ -86,7 +86,7 @@ export default function Hero({
               <Link href={"/contact"}>
                 <Button
                   type="secondary"
-                  text="Call"
+                  text={translations["call_btn"]}
                   element={
                     <Image
                       src="/assets/icons/call.svg"

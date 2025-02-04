@@ -128,10 +128,10 @@ const About = ({
 
             <div className="flex flex-wrap gap-4">
               <Link href="/portfolio">
-                <Button text="View Portfolio" type="primary" />
+                <Button text={translations["view_portfolio"]} type="primary" />
               </Link>
               <Link href="/contact">
-                <Button text="Contact Us" type="secondary" />
+                <Button text={translations["contact_us"]} type="secondary" />
               </Link>
             </div>
 

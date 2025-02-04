@@ -17,4 +17,18 @@ interface PortfolioItem {
 
 type PortfolioData = {
   portfolio_data: PortfolioItem[];
+  title?: {
+    en: string;
+    uz: string;
+    ru: string;
+  };
+  categories: Categories[];
+};
+type Categories = {
+  type: string;
+  label: {
+    en: string;
+    uz: string;
+    ru: string;
+  };
 };

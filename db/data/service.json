@@ -126,5 +126,15 @@
         "ru": "Мы предоставляем экспертные услуги IT-консалтинга для оптимизации вашей технологической инфраструктуры"
       }
     }
-  ]
+  ],
+  "title": {
+    "en": "What solution do you want?",
+    "uz": "Qanday yechimni xohlaysiz?",
+    "ru": "Какое решение вы хотите?"
+  },
+  "subtitle": {
+    "en": "Is there a problem?",
+    "uz": "Muammo bormi?",
+    "ru": "Есть ли проблема?"
+  }
 }
