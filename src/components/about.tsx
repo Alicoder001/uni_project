@@ -10,7 +10,7 @@ import Button from "./button";
 import Link from "next/link";
 
 const images = [
- 
+ "/assets/images/team_5.jpg",
 ];
 
 const sliderSettings = {
