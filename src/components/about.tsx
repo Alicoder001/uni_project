@@ -10,7 +10,7 @@ import Button from "./button";
 import Link from "next/link";
 
 const images = [
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.epitech-it.es%2F9-characteristics-of-a-programmer%2F&psig=AOvVaw1onI3ySbJALEzvS1sEV0m3&ust=1740888558407000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLjg0reB6IsDFQAAAAAdAAAAABAJ,https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.epitech-it.es%2F9-characteristics-of-a-programmer%2F&psig=AOvVaw1onI3ySbJALEzvS1sEV0m3&ust=1740888558407000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLjg0reB6IsDFQAAAAAdAAAAABAJ
+"https://www.epitech-it.es/wp-content/uploads/2022/07/danial-igdery-FCHlYvR5gJI-unsplash.jpg","https://img.freepik.com/premium-photo/programmer-working-developing-programming-website-working-software-develop-company-office_28283-1354.jpg"
 ];
 
 const sliderSettings = {
