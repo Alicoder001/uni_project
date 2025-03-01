@@ -10,7 +10,7 @@ import Button from "./button";
 import Link from "next/link";
 
 const images = [
- "/assets/images/team_5.jpg",
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.epitech-it.es%2F9-characteristics-of-a-programmer%2F&psig=AOvVaw1onI3ySbJALEzvS1sEV0m3&ust=1740888558407000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLjg0reB6IsDFQAAAAAdAAAAABAJ,https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.epitech-it.es%2F9-characteristics-of-a-programmer%2F&psig=AOvVaw1onI3ySbJALEzvS1sEV0m3&ust=1740888558407000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLjg0reB6IsDFQAAAAAdAAAAABAJ
 ];
 
 const sliderSettings = {
